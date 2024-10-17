@@ -22,7 +22,7 @@ const App = () => {
     </PaperProvider>
   );
 }
-
+ 
 const styles = StyleSheet.create({
   text: {
     color: 'blue',
