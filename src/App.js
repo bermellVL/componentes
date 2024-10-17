@@ -1,6 +1,7 @@
-import { Provider as PaperProvider, Text, TextInput, Button } from 'react-native-paper';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { Provider as PaperProvider, Text} from 'react-native-paper';
+import {StyleSheet } from 'react-native';
 import EntradaDEmail from './components/EtradaDEmails/EntradaDEmail';
+import EntradaDeTelefon from './components/EntradaDTelefono/EntradaDTelefono';
 
 const estil = 'florida';
 const isAdmin = false;
@@ -17,6 +18,7 @@ const App = () => {
     <PaperProvider>
       {nom(styles.estilDeText, 'Manel Viel')} 
       <EntradaDEmail />
+      <EntradaDeTelefon/>
     </PaperProvider>
   );
 }
