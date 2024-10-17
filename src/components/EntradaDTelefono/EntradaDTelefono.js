@@ -6,6 +6,7 @@ const EntradaDeTelefon = () => {
   const [telefon, setTelefon] = useState('');
   const [isFocused, setIsFocused] = useState(false);
 
+  
   const telefonRegex = /^(\+?[0-9]{1,3})?[ ]?([0-9]{9})$/;
 
   const isTelefonValid = (telefon) => telefonRegex.test(telefon);
