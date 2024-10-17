@@ -2,26 +2,23 @@ import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { TextInput, HelperText } from 'react-native-paper';
 
-const EntradaDeTelefon = () => {
+const EntradaDeTelefon = ({ nom, indicacions }) => {
   const [telefon, setTelefon] = useState('');
   const [isFocused, setIsFocused] = useState(false);
 
-
-  const labelmod = "Telefono"
-  const placeholdermod = "Format: +xx xxxxxxxxx o xxxxxxxxx"
   const telefonRegex = /^(\+?[0-9]{1,3})?[ ]?([0-9]{9})$/;
 
   const isTelefonValid = (telefon) => telefonRegex.test(telefon);
 
   const handleChange = (text) => {
-    setTelefon(text); // Permitir siempre la actualización del valor
+    setTelefon(text); 
   };
 
   return (
     <View style={styles.container}>
       <TextInput
-        label={labelmod}
-        placeholder={placeholdermod}
+        label={nom} 
+        placeholder={indicacions} 
         value={telefon}
         onChangeText={handleChange}
         keyboardType="phone-pad"
@@ -33,7 +30,7 @@ const EntradaDeTelefon = () => {
         ) : null}
         style={styles.input}
       />
-      <HelperText type="error" visible={!isTelefonValid(telefon) && isFocused}>
+      <HelperText type="error" visible={!isTelefonValid(telefon) && telefon !== ''}>
         Número de telèfon incorrecte
       </HelperText>
     </View>

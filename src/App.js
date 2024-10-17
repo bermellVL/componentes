@@ -1,11 +1,7 @@
-import { Provider as PaperProvider, Text} from 'react-native-paper';
-import {StyleSheet } from 'react-native';
-import EntradaDEmail from './components/EtradaDEmails/EntradaDEmail';
-import EntradaDeTelefon from './components/EntradaDTelefono/EntradaDTelefono';
-
-const estil = 'florida';
-const isAdmin = false;
-
+import { Provider as PaperProvider, Text } from 'react-native-paper';
+import { StyleSheet } from 'react-native';
+import EntradaDEmail from './components/CampsDEntrada/EntradaDEmail';
+import EntradaDeTelefon from './components/CampsDEntrada/EntradaDTelefono';
 
 const nom = (estil, textAMostrar) => {
   return (
@@ -17,12 +13,12 @@ const App = () => {
   return (
     <PaperProvider>
       {nom(styles.estilDeText, 'Manel Viel')} 
-      <EntradaDEmail />
-      <EntradaDeTelefon/>
+      <EntradaDEmail nom="Email" indicacions="Introduce tu email" />
+      <EntradaDeTelefon nom="Telèfon" indicacions="Formato: +xx xxxxxxxxx o xxxxxxxxx" />
     </PaperProvider>
   );
 }
- 
+
 const styles = StyleSheet.create({
   text: {
     color: 'blue',
@@ -49,7 +45,7 @@ const styles = StyleSheet.create({
     color: 'blue', 
     fontSize: 25, 
     fontWeight: 'bold', 
-    },
+  },
 });
 
 export default App;
