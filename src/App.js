@@ -62,9 +62,9 @@ const App = () => {
     { nom: 'EIE', professor: 'Ana', hores: 60 },
     ];
 
-  return (
+    return (
     <PaperProvider>
-      {nom(styles.text, "Victor y Aaron")}
+      {nom(styles.estilDeText, 'Manel Viel')}
       {dades(inputs)}
       {botoSiAdmin()}
       <ScrollView>
@@ -107,6 +107,11 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
+  estilDeText: { 
+    color: 'blue', 
+    fontSize: 25, 
+    fontWeight: 'bold', 
+    },
 });
 
 export default App;
