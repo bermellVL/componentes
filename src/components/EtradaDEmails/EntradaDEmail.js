@@ -6,6 +6,8 @@ const EntradaDEmail = () => {
   const [email, setEmail] = useState('');
   const [isFocused, setIsFocused] = useState(false);
 
+  const labelmod = "Email"
+  const placeholdermod = "Introduce un email"
   const emailRegex = /^[a-zA-Z]+\@[a-zA-Z\_\-0-9]+\.[a-z]{2,5}$/;
 
   const isEmailValid = (email) => emailRegex.test(email);
@@ -13,7 +15,8 @@ const EntradaDEmail = () => {
   return (
     <View style={styles.container}>
       <TextInput
-        label="Email"
+        label={labelmod}
+        placeholder={placeholdermod}
         value={email}
         onChangeText={(text) => setEmail(text)}
         keyboardType="email-address" 

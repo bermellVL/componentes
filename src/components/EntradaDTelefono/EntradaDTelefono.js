@@ -7,7 +7,8 @@ const EntradaDeTelefon = () => {
   const [isFocused, setIsFocused] = useState(false);
 
 
-  
+  const labelmod = "Telefono"
+  const placeholdermod = "Format: +xx xxxxxxxxx o xxxxxxxxx"
   const telefonRegex = /^(\+?[0-9]{1,3})?[ ]?([0-9]{9})$/;
 
   const isTelefonValid = (telefon) => telefonRegex.test(telefon);
@@ -19,7 +20,8 @@ const EntradaDeTelefon = () => {
   return (
     <View style={styles.container}>
       <TextInput
-        label="Telèfon"
+        label={labelmod}
+        placeholder={placeholdermod}
         value={telefon}
         onChangeText={handleChange}
         keyboardType="phone-pad"
@@ -31,7 +33,7 @@ const EntradaDeTelefon = () => {
         ) : null}
         style={styles.input}
       />
-      <HelperText type="error" visible={!isTelefonValid(telefon) && telefon !== ''}>
+      <HelperText type="error" visible={!isTelefonValid(telefon) && isFocused}>
         Número de telèfon incorrecte
       </HelperText>
     </View>
