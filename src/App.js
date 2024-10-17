@@ -4,6 +4,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 const estil = 'florida';
 const isAdmin = false;
 
+
 const nom = (estil, textAMostrar) => {
   return (
     <Text style={estil} variant='displayLarge'>{textAMostrar}</Text>
